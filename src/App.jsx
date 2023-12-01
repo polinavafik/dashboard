@@ -120,7 +120,7 @@ function App() {
                         const value = product[column.id];
                         return (
                           <TableCell key={column.id} align={column.align}>
-                            {value}
+                            {column.format ? column.format(value) : value}
                           </TableCell>
                         );
                       })}
