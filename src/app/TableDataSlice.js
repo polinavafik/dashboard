@@ -2,9 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { preparedData } from "../utils/data";
 
 const initialState = {
-  tableData: localStorage.getItem("tableData")
-    ? JSON.parse(localStorage.getItem("tableData"))
-    : preparedData,
+  tableData: preparedData,
   sortRevenue: false,
   sortUnitsSold: false,
   sortProfitMargins: false,
@@ -31,11 +29,24 @@ const TableDataSlice = createSlice({
           : product2.sold - product1.sold
       );
     },
+
+    toggleSortProfitMargins: state => {
+      state.sortProfitMargins = !state.sortProfitMargins;
+      state.tableData.sort((product1, product2) =>
+        state.sortProfitMargins
+          ? product1.margin - product2.margin
+          : product2.margin - product1.margin
+      );
+    },
   },
 });
 
-export const { toggleSortRevenue, toggleSortUnitsSold } =
-  TableDataSlice.actions;
+export const {
+  toggleSortRevenue,
+  toggleSortUnitsSold,
+  toggleSortProfitMargins,
+} = TableDataSlice.actions;
 
 export const selectTableData = state => state.tableData.tableData;
+
 export default TableDataSlice.reducer;
