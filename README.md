@@ -1,8 +1,33 @@
-# React + Vite
+# Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[DEMO](https://dashboard-phi-roan.vercel.app/)
 
-Currently, two official plugins are available:
+1. Table:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Populate the table with mock sales data for at least three product categories
+  over a period of 1 month.
+- Implement sorting options for revenue, units sold, and profit margins.
+- Enable dynamic filtering by day or product category.
+- Add possibility to download data in .csv format
+
+2. Chart:
+
+- Generate a line chart illustrating the sales trend for the month period.
+- Create a pie or bar chart depicting the distribution of sales among the three
+  product categories.
+
+3. Comparison Feature:
+
+- Develop a dropdown menu or interactive element to select and compare sales
+  data between two specific products.
+- Display the comparative metrics in chart sections for easy analysis.
+
+### Technical requirements:
+
+• Using React and Redux.
+• Use of functional components and hooks.
+• The code must be written in JavaScript.
+• Beautiful and clean user interface is welcome.
+• Using additional libraries and tools to improve the UX and interaction with the
+application will be a big advantage.
+• Deploy your work(Github Pages, Netlify, Vercel, ets. up to you)
