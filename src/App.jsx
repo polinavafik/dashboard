@@ -13,8 +13,20 @@
 // data between two specific products.
 // - Display the comparative metrics in chart sections for easy analysis.
 
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from "@mui/material";
+import * as React from "react";
+
 import "./App.css";
-import { TABLE_ATTRIBUTES } from "./utils/constants";
+import { columns } from "./utils/constants";
 import { useSelector, useDispatch } from "react-redux";
 import {
   toggleSortRevenue,
@@ -24,6 +36,18 @@ import {
 } from "./app/TableDataSlice";
 
 function App() {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = event => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
   const dispatch = useDispatch();
   const tableData = useSelector(selectTableData);
 
@@ -47,7 +71,77 @@ function App() {
 
   return (
     <>
-      <table className="table is-fullwidth">
+      <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <TableContainer sx={{ maxHeight: 600 }}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map(column =>
+                  column.id === "sold" ||
+                  column.id === "revenue" ||
+                  column.id === "margin" ? (
+                    <TableCell
+                      key={column.id}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth }}
+                      onClick={() => handleSort(column.label)}
+                    >
+                      {column.label}
+
+                      <span className="icon">
+                        <i className="fas fa-sort" />
+                      </span>
+                    </TableCell>
+                  ) : (
+                    <TableCell
+                      key={column.id}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth }}
+                    >
+                      {column.label}
+                    </TableCell>
+                  )
+                )}
+              </TableRow>
+            </TableHead>
+
+            <TableBody>
+              {tableData
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map(product => {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={product.id}
+                    >
+                      {columns.map(column => {
+                        const value = product[column.id];
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            {value}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 50]}
+          component="div"
+          count={tableData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Paper>
+
+      {/* <table>
         <thead>
           <tr>
             {TABLE_ATTRIBUTES.map(attribute =>
@@ -87,7 +181,7 @@ function App() {
             );
           })}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 }
