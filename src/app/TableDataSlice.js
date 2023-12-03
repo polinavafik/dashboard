@@ -3,50 +3,51 @@ import { preparedData } from "../utils/data";
 
 const initialState = {
   tableData: preparedData,
-  sortRevenue: false,
-  sortUnitsSold: false,
-  sortProfitMargins: false,
+  sortOptions: {
+    revenue: "default",
+    sold: "default",
+    margin: "default",
+  },
 };
 
 const TableDataSlice = createSlice({
   initialState,
   name: "tableData",
   reducers: {
-    toggleSortRevenue: state => {
-      state.sortRevenue = !state.sortRevenue;
-      state.tableData.sort((product1, product2) =>
-        state.sortRevenue
-          ? product1.revenue - product2.revenue
-          : product2.revenue - product1.revenue
-      );
-    },
+    toggleSort: (state, action) => {
+      const { column } = action.payload;
+      const currentSort = state.sortOptions[column];
 
-    toggleSortUnitsSold: state => {
-      state.sortUnitsSold = !state.sortUnitsSold;
-      state.tableData.sort((product1, product2) =>
-        state.sortUnitsSold
-          ? product1.sold - product2.sold
-          : product2.sold - product1.sold
-      );
-    },
+      switch (currentSort) {
+        case "default":
+          state.sortOptions[column] = "asc";
+          state.tableData.sort(
+            (product1, product2) => product1[column] - product2[column]
+          );
+          break;
 
-    toggleSortProfitMargins: state => {
-      state.sortProfitMargins = !state.sortProfitMargins;
-      state.tableData.sort((product1, product2) =>
-        state.sortProfitMargins
-          ? product1.margin - product2.margin
-          : product2.margin - product1.margin
-      );
+        case "asc":
+          state.sortOptions[column] = "desc";
+          state.tableData.sort(
+            (product1, product2) => product2[column] - product1[column]
+          );
+          break;
+
+        case "desc":
+          state.sortOptions[column] = "default";
+          state.tableData = preparedData.slice();
+          break;
+
+        default:
+          break;
+      }
     },
   },
 });
 
-export const {
-  toggleSortRevenue,
-  toggleSortUnitsSold,
-  toggleSortProfitMargins,
-} = TableDataSlice.actions;
+export const { toggleSort } = TableDataSlice.actions;
 
 export const selectTableData = state => state.tableData.tableData;
+export const selectSortOptions = state => state.tableData.sortOptions;
 
 export default TableDataSlice.reducer;
