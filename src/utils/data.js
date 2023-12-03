@@ -627,6 +627,14 @@ export const tableData = [
     cost: 600,
   },
   {
+    date: "2023-12-25",
+    category: "Home Goods",
+    name: "Hello Kitty cup",
+    sold: 43,
+    revenue: 645,
+    cost: 172,
+  },
+  {
     date: "2023-12-26",
     category: "Clothing",
     name: "Graphic T-Shirt",
