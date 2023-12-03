@@ -8,17 +8,16 @@
   over a period of 1 month.
 - yes Implement sorting options for revenue, units sold, and profit margins.
 - yes Enable dynamic filtering by day or product category.
-- yes? Add possibility to download data in .csv format
+- yes Add possibility to download data in .csv format
 
 2. Chart:
 
-- Generate a line chart illustrating the sales trend for the month period.
-- Create a pie or bar chart depicting the distribution of sales among the three product categories.
+- yes Generate a line chart illustrating the sales trend for the month period.
+- yes Create a pie or bar chart depicting the distribution of sales among the three product categories.
 
 3. Comparison Feature:
 
-- Develop a dropdown menu or interactive element to select and compare sales
-  data between two specific products.
+- Develop a dropdown menu or interactive element to select and compare sales data between two specific products.
 - Display the comparative metrics in chart sections for easy analysis.
 
 ### Technical requirements:
