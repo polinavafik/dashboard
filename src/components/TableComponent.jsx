@@ -22,6 +22,7 @@ import {
   selectFilters,
 } from "../app/TableDataSlice";
 import { DatePickComponent } from "./DatePickComponent";
+import SelectComponent from "./SelectComponent";
 
 export const TableComponent = () => {
   const [page, setPage] = useState(0);
@@ -49,16 +50,33 @@ export const TableComponent = () => {
     dispatch(setFilter({ filterType: "day", value: date }));
   };
 
+  const handleFilterByCategory = event => {
+    const newCategory = event.target.value;
+    dispatch(setFilter({ filterType: "category", value: newCategory }));
+  };
+
   const handleClearFilters = () => {
     dispatch(clearFilters());
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <div>
+    <Paper sx={{ width: "100%", overflow: "hidden", padding: "20px 10px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          gap: "10px",
+          minWidth: "700px",
+        }}
+      >
         <DatePickComponent filters={filters} onSetDate={handleFilterByDay} />
-      </div>
-      <div>
+
+        <SelectComponent
+          filters={filters}
+          onSetCategory={handleFilterByCategory}
+        />
+
         <Button onClick={handleClearFilters}>Clear Filters</Button>
       </div>
 

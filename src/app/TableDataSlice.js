@@ -11,7 +11,7 @@ const initialState = {
   },
   filters: {
     day: null,
-    category: "all",
+    category: "All",
   },
 };
 
@@ -39,7 +39,7 @@ const TableDataSlice = createSlice({
           break;
 
         case "desc":
-          if (state.filters.day !== null || state.filters.category !== "all") {
+          if (state.filters.day !== null || state.filters.category !== "All") {
             state.tableData = state.tableData.slice();
           } else {
             state.tableData = state.originData.slice();
@@ -65,7 +65,7 @@ const TableDataSlice = createSlice({
         }
 
         if (
-          state.filters.category !== "all" &&
+          state.filters.category !== "All" &&
           state.filters.category !== product.category
         ) {
           return false;
@@ -78,10 +78,10 @@ const TableDataSlice = createSlice({
     clearFilters: state => {
       state.filters = {
         day: null,
-        category: "all",
+        category: "All",
       };
 
-      //idk maybe?
+      //idk maybe clear all filtration and sorting??
       (state.sortOptions = {
         revenue: "default",
         sold: "default",

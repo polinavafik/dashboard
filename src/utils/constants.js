@@ -25,3 +25,5 @@ export const columns = [
     format: value => `${value}%`,
   },
 ];
+
+export const categories = ["All", "Electronics", "Clothing", "Home Goods"];
