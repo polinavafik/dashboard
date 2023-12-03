@@ -2,11 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { preparedData } from "../utils/data";
 
 const initialState = {
+  originData: preparedData,
   tableData: preparedData,
   sortOptions: {
     revenue: "default",
     sold: "default",
     margin: "default",
+  },
+  filters: {
+    day: null,
+    category: "all",
   },
 };
 
@@ -34,20 +39,63 @@ const TableDataSlice = createSlice({
           break;
 
         case "desc":
+          if (state.filters.day !== null || state.filters.category !== "all") {
+            state.tableData = state.tableData.slice();
+          } else {
+            state.tableData = state.originData.slice();
+          }
           state.sortOptions[column] = "default";
-          state.tableData = preparedData.slice();
+
+          // old BUG🐞 returns everything on default because of current logic
+          // new BUG🐞 I cannot recieve default unsorted tabledata, because its modified
           break;
 
         default:
           break;
       }
     },
+
+    setFilter: (state, action) => {
+      const { filterType, value } = action.payload;
+      state.filters[filterType] = value;
+
+      state.tableData = state.originData.filter(product => {
+        if (state.filters.day !== null && state.filters.day !== product.date) {
+          return false;
+        }
+
+        if (
+          state.filters.category !== "all" &&
+          state.filters.category !== product.category
+        ) {
+          return false;
+        }
+
+        return true;
+      });
+    },
+
+    clearFilters: state => {
+      state.filters = {
+        day: null,
+        category: "all",
+      };
+
+      //idk maybe?
+      (state.sortOptions = {
+        revenue: "default",
+        sold: "default",
+        margin: "default",
+      }),
+        (state.tableData = state.originData.slice());
+    },
   },
 });
 
-export const { toggleSort } = TableDataSlice.actions;
+export const { toggleSort, setFilter, clearFilters } = TableDataSlice.actions;
 
 export const selectTableData = state => state.tableData.tableData;
 export const selectSortOptions = state => state.tableData.sortOptions;
+export const selectFilters = state => state.tableData.filters;
 
 export default TableDataSlice.reducer;

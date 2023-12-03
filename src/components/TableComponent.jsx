@@ -1,4 +1,6 @@
-import * as React from "react";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import cn from "classnames";
 import {
   Paper,
   Table,
@@ -8,19 +10,22 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  Button,
 } from "@mui/material";
 import { columns } from "../utils/constants";
-import { useSelector, useDispatch } from "react-redux";
 import {
   toggleSort,
+  setFilter,
+  clearFilters,
   selectTableData,
   selectSortOptions,
+  selectFilters,
 } from "../app/TableDataSlice";
-import cn from "classnames";
+import { DatePickComponent } from "./DatePickComponent";
 
 export const TableComponent = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -34,13 +39,29 @@ export const TableComponent = () => {
   const dispatch = useDispatch();
   const tableData = useSelector(selectTableData);
   const sortOptions = useSelector(selectSortOptions);
+  const filters = useSelector(selectFilters);
 
   const handleSort = column => {
     dispatch(toggleSort({ column }));
   };
 
+  const handleFilterByDay = date => {
+    dispatch(setFilter({ filterType: "day", value: date }));
+  };
+
+  const handleClearFilters = () => {
+    dispatch(clearFilters());
+  };
+
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
+      <div>
+        <DatePickComponent filters={filters} onSetDate={handleFilterByDay} />
+      </div>
+      <div>
+        <Button onClick={handleClearFilters}>Clear Filters</Button>
+      </div>
+
       <TableContainer sx={{ maxHeight: 600 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -94,6 +115,7 @@ export const TableComponent = () => {
           </TableBody>
         </Table>
       </TableContainer>
+
       <TablePagination
         rowsPerPageOptions={[10, 25, 50]}
         component="div"

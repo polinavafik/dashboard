@@ -3,7 +3,7 @@ import { getProfitMargin } from "../utils/getProfitMargin";
 
 export const tableData = [
   {
-    date: "2023-01-01",
+    date: "2023-12-01",
     category: "Electronics",
     name: "Laptop",
     sold: 50,
@@ -11,7 +11,7 @@ export const tableData = [
     cost: 18000,
   },
   {
-    date: "2023-01-01",
+    date: "2023-12-01",
     category: "Clothing",
     name: "T-Shirt",
     sold: 100,
@@ -19,7 +19,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-01",
+    date: "2023-12-01",
     category: "Home Goods",
     name: "Coffee Maker",
     sold: 30,
@@ -27,7 +27,7 @@ export const tableData = [
     cost: 1500,
   },
   {
-    date: "2023-01-02",
+    date: "2023-12-02",
     category: "Electronics",
     name: "Smartphone",
     sold: 80,
@@ -35,7 +35,7 @@ export const tableData = [
     cost: 30000,
   },
   {
-    date: "2023-01-02",
+    date: "2023-12-02",
     category: "Clothing",
     name: "Jeans",
     sold: 70,
@@ -43,7 +43,7 @@ export const tableData = [
     cost: 1200,
   },
   {
-    date: "2023-01-02",
+    date: "2023-12-02",
     category: "Home Goods",
     name: "Bedding Set",
     sold: 20,
@@ -51,7 +51,7 @@ export const tableData = [
     cost: 800,
   },
   {
-    date: "2023-01-03",
+    date: "2023-12-03",
     category: "Electronics",
     name: "Headphones",
     sold: 40,
@@ -59,7 +59,7 @@ export const tableData = [
     cost: 2500,
   },
   {
-    date: "2023-01-03",
+    date: "2023-12-03",
     category: "Clothing",
     name: "Dress",
     sold: 60,
@@ -67,7 +67,7 @@ export const tableData = [
     cost: 1800,
   },
   {
-    date: "2023-01-03",
+    date: "2023-12-03",
     category: "Home Goods",
     name: "Blender",
     sold: 25,
@@ -75,7 +75,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-04",
+    date: "2023-12-04",
     category: "Electronics",
     name: "Smartwatch",
     sold: 35,
@@ -83,7 +83,7 @@ export const tableData = [
     cost: 3500,
   },
   {
-    date: "2023-01-04",
+    date: "2023-12-04",
     category: "Clothing",
     name: "Sweater",
     sold: 45,
@@ -91,7 +91,7 @@ export const tableData = [
     cost: 1000,
   },
   {
-    date: "2023-01-04",
+    date: "2023-12-04",
     category: "Home Goods",
     name: "Vacuum Cleaner",
     sold: 15,
@@ -99,7 +99,7 @@ export const tableData = [
     cost: 800,
   },
   {
-    date: "2023-01-05",
+    date: "2023-12-05",
     category: "Electronics",
     name: "Gaming Console",
     sold: 60,
@@ -107,7 +107,7 @@ export const tableData = [
     cost: 20000,
   },
   {
-    date: "2023-01-05",
+    date: "2023-12-05",
     category: "Clothing",
     name: "Sneakers",
     sold: 90,
@@ -115,7 +115,7 @@ export const tableData = [
     cost: 2500,
   },
   {
-    date: "2023-01-05",
+    date: "2023-12-05",
     category: "Home Goods",
     name: "Cookware Set",
     sold: 25,
@@ -123,7 +123,7 @@ export const tableData = [
     cost: 1200,
   },
   {
-    date: "2023-01-06",
+    date: "2023-12-06",
     category: "Electronics",
     name: "Digital Camera",
     sold: 30,
@@ -131,7 +131,7 @@ export const tableData = [
     cost: 6000,
   },
   {
-    date: "2023-01-06",
+    date: "2023-12-06",
     category: "Clothing",
     name: "Jacket",
     sold: 40,
@@ -139,7 +139,7 @@ export const tableData = [
     cost: 2000,
   },
   {
-    date: "2023-01-06",
+    date: "2023-12-06",
     category: "Home Goods",
     name: "Air Purifier",
     sold: 15,
@@ -147,7 +147,7 @@ export const tableData = [
     cost: 800,
   },
   {
-    date: "2023-01-07",
+    date: "2023-12-07",
     category: "Electronics",
     name: "Wireless Earbuds",
     sold: 50,
@@ -155,7 +155,7 @@ export const tableData = [
     cost: 3000,
   },
   {
-    date: "2023-01-07",
+    date: "2023-12-07",
     category: "Clothing",
     name: "Skirt",
     sold: 30,
@@ -163,7 +163,7 @@ export const tableData = [
     cost: 700,
   },
   {
-    date: "2023-01-07",
+    date: "2023-12-07",
     category: "Home Goods",
     name: "Towel Set",
     sold: 20,
@@ -171,7 +171,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-08",
+    date: "2023-12-08",
     category: "Electronics",
     name: "Tablet",
     sold: 45,
@@ -179,7 +179,7 @@ export const tableData = [
     cost: 10000,
   },
   {
-    date: "2023-01-08",
+    date: "2023-12-08",
     category: "Clothing",
     name: "Hat",
     sold: 25,
@@ -187,7 +187,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-08",
+    date: "2023-12-08",
     category: "Home Goods",
     name: "Lamp",
     sold: 10,
@@ -195,7 +195,7 @@ export const tableData = [
     cost: 250,
   },
   {
-    date: "2023-01-09",
+    date: "2023-12-09",
     category: "Electronics",
     name: "TV",
     sold: 20,
@@ -203,7 +203,7 @@ export const tableData = [
     cost: 7000,
   },
   {
-    date: "2023-01-09",
+    date: "2023-12-09",
     category: "Clothing",
     name: "Pajamas",
     sold: 30,
@@ -211,7 +211,7 @@ export const tableData = [
     cost: 800,
   },
   {
-    date: "2023-01-09",
+    date: "2023-12-09",
     category: "Home Goods",
     name: "Wall Clock",
     sold: 15,
@@ -219,7 +219,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-10",
+    date: "2023-12-10",
     category: "Electronics",
     name: "Soundbar",
     sold: 25,
@@ -227,7 +227,7 @@ export const tableData = [
     cost: 2500,
   },
   {
-    date: "2023-01-10",
+    date: "2023-12-10",
     category: "Clothing",
     name: "Sunglasses",
     sold: 40,
@@ -235,7 +235,7 @@ export const tableData = [
     cost: 1000,
   },
   {
-    date: "2023-01-10",
+    date: "2023-12-10",
     category: "Home Goods",
     name: "Outdoor Furniture",
     sold: 10,
@@ -243,7 +243,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-11",
+    date: "2023-12-11",
     category: "Electronics",
     name: "Digital Watch",
     sold: 55,
@@ -251,7 +251,7 @@ export const tableData = [
     cost: 3000,
   },
   {
-    date: "2023-01-11",
+    date: "2023-12-11",
     category: "Clothing",
     name: "Hoodie",
     sold: 75,
@@ -259,7 +259,7 @@ export const tableData = [
     cost: 1800,
   },
   {
-    date: "2023-01-11",
+    date: "2023-12-11",
     category: "Home Goods",
     name: "Candle Holder",
     sold: 18,
@@ -267,7 +267,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-12",
+    date: "2023-12-12",
     category: "Electronics",
     name: "Bluetooth Speaker",
     sold: 38,
@@ -275,7 +275,7 @@ export const tableData = [
     cost: 2000,
   },
   {
-    date: "2023-01-12",
+    date: "2023-12-12",
     category: "Clothing",
     name: "Pants",
     sold: 65,
@@ -283,7 +283,7 @@ export const tableData = [
     cost: 1500,
   },
   {
-    date: "2023-01-12",
+    date: "2023-12-12",
     category: "Home Goods",
     name: "Plant Pot",
     sold: 22,
@@ -291,7 +291,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-13",
+    date: "2023-12-13",
     category: "Electronics",
     name: "Fitness Tracker",
     sold: 42,
@@ -299,7 +299,7 @@ export const tableData = [
     cost: 2000,
   },
   {
-    date: "2023-01-13",
+    date: "2023-12-13",
     category: "Clothing",
     name: "Dress Shirt",
     sold: 55,
@@ -307,7 +307,7 @@ export const tableData = [
     cost: 1300,
   },
   {
-    date: "2023-01-13",
+    date: "2023-12-13",
     category: "Home Goods",
     name: "Picture Frame",
     sold: 15,
@@ -315,7 +315,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-14",
+    date: "2023-12-14",
     category: "Electronics",
     name: "Wireless Charger",
     sold: 28,
@@ -323,7 +323,7 @@ export const tableData = [
     cost: 1400,
   },
   {
-    date: "2023-01-14",
+    date: "2023-12-14",
     category: "Clothing",
     name: "Sweatpants",
     sold: 48,
@@ -331,7 +331,7 @@ export const tableData = [
     cost: 1200,
   },
   {
-    date: "2023-01-14",
+    date: "2023-12-14",
     category: "Home Goods",
     name: "Throw Blanket",
     sold: 20,
@@ -339,7 +339,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-15",
+    date: "2023-12-15",
     category: "Electronics",
     name: "Smart Thermostat",
     sold: 35,
@@ -347,7 +347,7 @@ export const tableData = [
     cost: 1800,
   },
   {
-    date: "2023-01-15",
+    date: "2023-12-15",
     category: "Clothing",
     name: "Scarf",
     sold: 25,
@@ -355,7 +355,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-15",
+    date: "2023-12-15",
     category: "Home Goods",
     name: "Bookshelf",
     sold: 12,
@@ -363,7 +363,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-16",
+    date: "2023-12-16",
     category: "Electronics",
     name: "VR Headset",
     sold: 20,
@@ -371,7 +371,7 @@ export const tableData = [
     cost: 4000,
   },
   {
-    date: "2023-01-16",
+    date: "2023-12-16",
     category: "Clothing",
     name: "Winter Jacket",
     sold: 30,
@@ -379,7 +379,7 @@ export const tableData = [
     cost: 750,
   },
   {
-    date: "2023-01-16",
+    date: "2023-12-16",
     category: "Home Goods",
     name: "Desk Organizer",
     sold: 18,
@@ -387,7 +387,7 @@ export const tableData = [
     cost: 450,
   },
   {
-    date: "2023-01-17",
+    date: "2023-12-17",
     category: "Electronics",
     name: "Portable Charger",
     sold: 25,
@@ -395,7 +395,7 @@ export const tableData = [
     cost: 1200,
   },
   {
-    date: "2023-01-17",
+    date: "2023-12-17",
     category: "Clothing",
     name: "Gloves",
     sold: 22,
@@ -403,7 +403,7 @@ export const tableData = [
     cost: 550,
   },
   {
-    date: "2023-01-17",
+    date: "2023-12-17",
     category: "Home Goods",
     name: "Cushions",
     sold: 15,
@@ -411,7 +411,7 @@ export const tableData = [
     cost: 350,
   },
   {
-    date: "2023-01-18",
+    date: "2023-12-18",
     category: "Electronics",
     name: "Wireless Mouse",
     sold: 28,
@@ -419,7 +419,7 @@ export const tableData = [
     cost: 1400,
   },
   {
-    date: "2023-01-18",
+    date: "2023-12-18",
     category: "Clothing",
     name: "Beanie",
     sold: 20,
@@ -427,7 +427,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-18",
+    date: "2023-12-18",
     category: "Home Goods",
     name: "Shoe Rack",
     sold: 10,
@@ -435,7 +435,7 @@ export const tableData = [
     cost: 250,
   },
   {
-    date: "2023-01-19",
+    date: "2023-12-19",
     category: "Electronics",
     name: "Bluetooth Earphones",
     sold: 35,
@@ -443,7 +443,7 @@ export const tableData = [
     cost: 1600,
   },
   {
-    date: "2023-01-19",
+    date: "2023-12-19",
     category: "Clothing",
     name: "Polo Shirt",
     sold: 18,
@@ -451,7 +451,7 @@ export const tableData = [
     cost: 450,
   },
   {
-    date: "2023-01-19",
+    date: "2023-12-19",
     category: "Home Goods",
     name: "Laptop Stand",
     sold: 15,
@@ -459,7 +459,7 @@ export const tableData = [
     cost: 350,
   },
   {
-    date: "2023-01-20",
+    date: "2023-12-20",
     category: "Electronics",
     name: "Webcam",
     sold: 22,
@@ -467,7 +467,7 @@ export const tableData = [
     cost: 1000,
   },
   {
-    date: "2023-01-20",
+    date: "2023-12-20",
     category: "Clothing",
     name: "Socks",
     sold: 25,
@@ -475,7 +475,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-20",
+    date: "2023-12-20",
     category: "Home Goods",
     name: "Mirror",
     sold: 12,
@@ -483,7 +483,7 @@ export const tableData = [
     cost: 300,
   },
   {
-    date: "2023-01-21",
+    date: "2023-12-21",
     category: "Electronics",
     name: "Power Bank",
     sold: 30,
@@ -491,7 +491,7 @@ export const tableData = [
     cost: 1500,
   },
   {
-    date: "2023-01-21",
+    date: "2023-12-21",
     category: "Clothing",
     name: "Denim Jacket",
     sold: 15,
@@ -499,7 +499,7 @@ export const tableData = [
     cost: 350,
   },
   {
-    date: "2023-01-21",
+    date: "2023-12-21",
     category: "Home Goods",
     name: "Shower Curtain",
     sold: 20,
@@ -507,7 +507,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-22",
+    date: "2023-12-22",
     category: "Electronics",
     name: "Fitness Smartwatch",
     sold: 40,
@@ -515,7 +515,7 @@ export const tableData = [
     cost: 2000,
   },
   {
-    date: "2023-01-22",
+    date: "2023-12-22",
     category: "Clothing",
     name: "Cardigan",
     sold: 18,
@@ -523,7 +523,7 @@ export const tableData = [
     cost: 450,
   },
   {
-    date: "2023-01-22",
+    date: "2023-12-22",
     category: "Home Goods",
     name: "Candles",
     sold: 25,
@@ -531,7 +531,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-23",
+    date: "2023-12-23",
     category: "Electronics",
     name: "Wireless Keyboard",
     sold: 22,
@@ -539,7 +539,7 @@ export const tableData = [
     cost: 1000,
   },
   {
-    date: "2023-01-23",
+    date: "2023-12-23",
     category: "Clothing",
     name: "Summer Dress",
     sold: 30,
@@ -547,7 +547,7 @@ export const tableData = [
     cost: 750,
   },
   {
-    date: "2023-01-23",
+    date: "2023-12-23",
     category: "Home Goods",
     name: "Picture Frame",
     sold: 15,
@@ -555,7 +555,7 @@ export const tableData = [
     cost: 350,
   },
   {
-    date: "2023-01-24",
+    date: "2023-12-24",
     category: "Electronics",
     name: "Bluetooth Headset",
     sold: 28,
@@ -563,7 +563,7 @@ export const tableData = [
     cost: 1400,
   },
   {
-    date: "2023-01-24",
+    date: "2023-12-24",
     category: "Clothing",
     name: "Shorts",
     sold: 35,
@@ -571,7 +571,7 @@ export const tableData = [
     cost: 900,
   },
   {
-    date: "2023-01-24",
+    date: "2023-12-24",
     category: "Home Goods",
     name: "Desk Lamp",
     sold: 12,
@@ -579,7 +579,7 @@ export const tableData = [
     cost: 300,
   },
   {
-    date: "2023-01-25",
+    date: "2023-12-25",
     category: "Electronics",
     name: "Smart Home Hub",
     sold: 18,
@@ -587,7 +587,7 @@ export const tableData = [
     cost: 900,
   },
   {
-    date: "2023-01-25",
+    date: "2023-12-25",
     category: "Clothing",
     name: "Tank Top",
     sold: 25,
@@ -595,7 +595,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-26",
+    date: "2023-12-26",
     category: "Clothing",
     name: "Graphic T-Shirt",
     sold: 28,
@@ -603,7 +603,7 @@ export const tableData = [
     cost: 700,
   },
   {
-    date: "2023-01-26",
+    date: "2023-12-26",
     category: "Home Goods",
     name: "Wall Art",
     sold: 10,
@@ -611,7 +611,7 @@ export const tableData = [
     cost: 250,
   },
   {
-    date: "2023-01-27",
+    date: "2023-12-27",
     category: "Electronics",
     name: "Wireless Printer",
     sold: 20,
@@ -619,7 +619,7 @@ export const tableData = [
     cost: 1000,
   },
   {
-    date: "2023-01-27",
+    date: "2023-12-27",
     category: "Clothing",
     name: "Sweatshirt",
     sold: 25,
@@ -627,7 +627,7 @@ export const tableData = [
     cost: 600,
   },
   {
-    date: "2023-01-27",
+    date: "2023-12-27",
     category: "Home Goods",
     name: "Pillow Set",
     sold: 15,
@@ -635,7 +635,7 @@ export const tableData = [
     cost: 400,
   },
   {
-    date: "2023-01-28",
+    date: "2023-12-28",
     category: "Electronics",
     name: "Smart Scale",
     sold: 18,
@@ -643,7 +643,7 @@ export const tableData = [
     cost: 900,
   },
   {
-    date: "2023-01-28",
+    date: "2023-12-28",
     category: "Clothing",
     name: "Flannel Shirt",
     sold: 22,
@@ -651,7 +651,7 @@ export const tableData = [
     cost: 550,
   },
   {
-    date: "2023-01-28",
+    date: "2023-12-28",
     category: "Home Goods",
     name: "Plant Stand",
     sold: 12,
@@ -659,7 +659,7 @@ export const tableData = [
     cost: 300,
   },
   {
-    date: "2023-01-29",
+    date: "2023-12-29",
     category: "Electronics",
     name: "Action Camera",
     sold: 30,
@@ -667,7 +667,7 @@ export const tableData = [
     cost: 1500,
   },
   {
-    date: "2023-01-29",
+    date: "2023-12-29",
     category: "Clothing",
     name: "Leggings",
     sold: 18,
@@ -675,7 +675,7 @@ export const tableData = [
     cost: 450,
   },
   {
-    date: "2023-01-29",
+    date: "2023-12-29",
     category: "Home Goods",
     name: "Vase",
     sold: 20,
@@ -683,7 +683,7 @@ export const tableData = [
     cost: 500,
   },
   {
-    date: "2023-01-30",
+    date: "2023-12-30",
     category: "Electronics",
     name: "Robot Vacuum",
     sold: 25,
@@ -691,7 +691,7 @@ export const tableData = [
     cost: 1200,
   },
   {
-    date: "2023-01-30",
+    date: "2023-12-30",
     category: "Clothing",
     name: "Baseball Cap",
     sold: 12,
@@ -699,7 +699,7 @@ export const tableData = [
     cost: 300,
   },
   {
-    date: "2023-01-30",
+    date: "2023-12-30",
     category: "Home Goods",
     name: "Curtains",
     sold: 15,
