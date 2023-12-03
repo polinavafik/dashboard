@@ -23,6 +23,7 @@ import {
 } from "../app/TableDataSlice";
 import { DatePickComponent } from "./DatePickComponent";
 import SelectComponent from "./SelectComponent";
+import { CSVLink } from "react-csv";
 
 export const TableComponent = () => {
   const [page, setPage] = useState(0);
@@ -71,12 +72,10 @@ export const TableComponent = () => {
         }}
       >
         <DatePickComponent filters={filters} onSetDate={handleFilterByDay} />
-
         <SelectComponent
           filters={filters}
           onSetCategory={handleFilterByCategory}
         />
-
         <Button onClick={handleClearFilters}>Clear Filters</Button>
       </div>
 
@@ -134,15 +133,37 @@ export const TableComponent = () => {
         </Table>
       </TableContainer>
 
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 50]}
-        component="div"
-        count={tableData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+      <div
+        style={{
+          paddingTop: "15px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <Button>
+          <CSVLink
+            style={{
+              color: "green",
+            }}
+            data={tableData}
+          >
+            Download .csv
+          </CSVLink>
+        </Button>
+
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 50]}
+          component="div"
+          count={tableData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </div>
     </Paper>
   );
 };

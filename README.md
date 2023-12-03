@@ -7,8 +7,8 @@
 - yes Populate the table with mock sales data for at least three product categories
   over a period of 1 month.
 - yes Implement sorting options for revenue, units sold, and profit margins.
-- Enable dynamic filtering by day or product category.
-- Add possibility to download data in .csv format
+- yes Enable dynamic filtering by day or product category.
+- yes? Add possibility to download data in .csv format
 
 2. Chart:
 
