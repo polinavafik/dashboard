@@ -13,8 +13,7 @@
 2. Chart:
 
 - Generate a line chart illustrating the sales trend for the month period.
-- Create a pie or bar chart depicting the distribution of sales among the three
-  product categories.
+- Create a pie or bar chart depicting the distribution of sales among the three product categories.
 
 3. Comparison Feature:
 

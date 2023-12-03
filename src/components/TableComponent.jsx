@@ -24,6 +24,8 @@ import {
 import { DatePickComponent } from "./DatePickComponent";
 import SelectComponent from "./SelectComponent";
 import { CSVLink } from "react-csv";
+import { PieChartComponent } from "./PieChartComponent";
+import { LineChartComponent } from "./LineChartComponent";
 
 export const TableComponent = () => {
   const [page, setPage] = useState(0);
@@ -163,6 +165,19 @@ export const TableComponent = () => {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+      </div>
+      <div
+        style={{
+          paddingTop: "15px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <LineChartComponent data={tableData} />
+        <PieChartComponent data={tableData} />
       </div>
     </Paper>
   );
