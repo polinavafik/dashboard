@@ -6,6 +6,7 @@ import {
   selectTableData,
   selectSortOptions,
   selectFilters,
+  compareProducts,
 } from "./app/TableDataSlice";
 import { DatePickComponent } from "../src/components/DatePickComponent";
 import SelectComponent from "../src/components/SelectComponent";
@@ -15,6 +16,7 @@ import { LineChartComponent } from "../src/components/LineChartComponent";
 import { Button, Paper } from "@mui/material";
 import "./App.css";
 import { TableComponent } from "../src/components/TableComponent";
+import ProductComparison from "./components/ProductComparison";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +41,11 @@ function App() {
   const handleClearFilters = () => {
     dispatch(clearFilters());
   };
+
+  const handleProductCompare = selectedProducts => {
+    dispatch(compareProducts({ products: selectedProducts }));
+  };
+
   return (
     <Paper sx={{ width: "100%", overflow: "hidden", padding: "20px 10px" }}>
       <div
@@ -76,6 +83,22 @@ function App() {
       >
         <LineChartComponent data={tableData} />
         <PieChartComponent data={tableData} />
+      </div>
+
+      <div
+        style={{
+          paddingTop: "30px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <ProductComparison
+          tableData={tableData}
+          onCompare={handleProductCompare}
+        />
       </div>
     </Paper>
   );

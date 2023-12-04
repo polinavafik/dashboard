@@ -644,6 +644,14 @@ export const tableData = [
   },
   {
     date: "2023-12-26",
+    category: "Electronics",
+    name: "Apple Watch",
+    sold: 6,
+    revenue: 3000,
+    cost: 900,
+  },
+  {
+    date: "2023-12-26",
     category: "Home Goods",
     name: "Wall Art",
     sold: 10,

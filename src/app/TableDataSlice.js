@@ -13,6 +13,7 @@ const initialState = {
     day: null,
     category: "All",
   },
+  productsToCompare: [],
 };
 
 const TableDataSlice = createSlice({
@@ -86,13 +87,20 @@ const TableDataSlice = createSlice({
       }),
         (state.tableData = state.originData.slice());
     },
+
+    compareProducts: (state, action) => {
+      state.productsToCompare = action.payload.products;
+    },
   },
 });
 
-export const { toggleSort, setFilter, clearFilters } = TableDataSlice.actions;
+export const { toggleSort, setFilter, clearFilters, compareProducts } =
+  TableDataSlice.actions;
 
 export const selectTableData = state => state.tableData.tableData;
 export const selectSortOptions = state => state.tableData.sortOptions;
 export const selectFilters = state => state.tableData.filters;
+export const selectProductsToCompare = state =>
+  state.tableData.productsToCompare;
 
 export default TableDataSlice.reducer;

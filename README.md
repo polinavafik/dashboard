@@ -17,8 +17,8 @@
 
 3. Comparison Feature:
 
-- Develop a dropdown menu or interactive element to select and compare sales data between two specific products.
-- Display the comparative metrics in chart sections for easy analysis.
+- yes Develop a dropdown menu or interactive element to select and compare sales data between two specific products.
+- yes? Display the comparative metrics in chart sections for easy analysis.
 
 ### Technical requirements:
 
