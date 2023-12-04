@@ -45,9 +45,6 @@ const TableDataSlice = createSlice({
             state.tableData = state.originData.slice();
           }
           state.sortOptions[column] = "default";
-
-          // old BUG🐞 returns everything on default because of current logic
-          // new BUG🐞 I cannot recieve default unsorted tabledata, because its modified
           break;
 
         default:

@@ -1,26 +1,83 @@
-// 1. Table:
-// + Populate the table with mock sales data for at least three product categories
-// over a period of 1 month.
-// + Implement sorting options for revenue, units sold, and profit margins.
-// - Enable dynamic filtering by day or product category.
-// - Add possibility to download data in .csv format
-// 2. Chart:
-// - Generate a line chart illustrating the sales trend for the month period.
-// - Create a pie or bar chart depicting the distribution of sales among the three
-// product categories.
-// 3. Comparison Feature:
-// - Develop a dropdown menu or interactive element to select and compare sales
-// data between two specific products.
-// - Display the comparative metrics in chart sections for easy analysis.
+import { useSelector, useDispatch } from "react-redux";
+import {
+  toggleSort,
+  setFilter,
+  clearFilters,
+  selectTableData,
+  selectSortOptions,
+  selectFilters,
+} from "./app/TableDataSlice";
+import { DatePickComponent } from "../src/components/DatePickComponent";
+import SelectComponent from "../src/components/SelectComponent";
+import { PieChartComponent } from "../src/components/PieChartComponent";
+import { LineChartComponent } from "../src/components/LineChartComponent";
 
+import { Button, Paper } from "@mui/material";
 import "./App.css";
-import { TableComponent } from "./components/TableComponent";
+import { TableComponent } from "../src/components/TableComponent";
 
 function App() {
+  const dispatch = useDispatch();
+
+  const tableData = useSelector(selectTableData);
+  const sortOptions = useSelector(selectSortOptions);
+  const filters = useSelector(selectFilters);
+
+  const handleSort = column => {
+    dispatch(toggleSort({ column }));
+  };
+
+  const handleFilterByDay = date => {
+    dispatch(setFilter({ filterType: "day", value: date }));
+  };
+
+  const handleFilterByCategory = event => {
+    const newCategory = event.target.value;
+    dispatch(setFilter({ filterType: "category", value: newCategory }));
+  };
+
+  const handleClearFilters = () => {
+    dispatch(clearFilters());
+  };
   return (
-    <>
-      <TableComponent />
-    </>
+    <Paper sx={{ width: "100%", overflow: "hidden", padding: "20px 10px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          gap: "10px",
+          minWidth: "700px",
+        }}
+      >
+        <DatePickComponent filters={filters} onSetDate={handleFilterByDay} />
+        <SelectComponent
+          filters={filters}
+          onSetCategory={handleFilterByCategory}
+        />
+        <Button onClick={handleClearFilters}>Clear Filters</Button>
+      </div>
+
+      <TableComponent
+        onHandleSort={handleSort}
+        sortOptions={sortOptions}
+        tableData={tableData}
+      />
+
+      <div
+        style={{
+          paddingTop: "15px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <LineChartComponent data={tableData} />
+        <PieChartComponent data={tableData} />
+      </div>
+    </Paper>
   );
 }
 

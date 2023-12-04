@@ -25,7 +25,7 @@ export const PieChartComponent = ({ data }) => {
   );
 
   return (
-    <PieChart width={400} height={300}>
+    <PieChart width={450} height={300}>
       <Pie
         dataKey="totalSold"
         nameKey="category"

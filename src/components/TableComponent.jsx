@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import {
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -13,21 +12,9 @@ import {
   Button,
 } from "@mui/material";
 import { columns } from "../utils/constants";
-import {
-  toggleSort,
-  setFilter,
-  clearFilters,
-  selectTableData,
-  selectSortOptions,
-  selectFilters,
-} from "../app/TableDataSlice";
-import { DatePickComponent } from "./DatePickComponent";
-import SelectComponent from "./SelectComponent";
 import { CSVLink } from "react-csv";
-import { PieChartComponent } from "./PieChartComponent";
-import { LineChartComponent } from "./LineChartComponent";
 
-export const TableComponent = () => {
+export const TableComponent = ({ onHandleSort, sortOptions, tableData }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
@@ -40,47 +27,8 @@ export const TableComponent = () => {
     setPage(0);
   };
 
-  const dispatch = useDispatch();
-  const tableData = useSelector(selectTableData);
-  const sortOptions = useSelector(selectSortOptions);
-  const filters = useSelector(selectFilters);
-
-  const handleSort = column => {
-    dispatch(toggleSort({ column }));
-  };
-
-  const handleFilterByDay = date => {
-    dispatch(setFilter({ filterType: "day", value: date }));
-  };
-
-  const handleFilterByCategory = event => {
-    const newCategory = event.target.value;
-    dispatch(setFilter({ filterType: "category", value: newCategory }));
-  };
-
-  const handleClearFilters = () => {
-    dispatch(clearFilters());
-  };
-
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden", padding: "20px 10px" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: "10px",
-          minWidth: "700px",
-        }}
-      >
-        <DatePickComponent filters={filters} onSetDate={handleFilterByDay} />
-        <SelectComponent
-          filters={filters}
-          onSetCategory={handleFilterByCategory}
-        />
-        <Button onClick={handleClearFilters}>Clear Filters</Button>
-      </div>
-
+    <>
       <TableContainer sx={{ maxHeight: 600 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -90,7 +38,7 @@ export const TableComponent = () => {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
-                  onClick={() => handleSort(column.id)}
+                  onClick={() => onHandleSort(column.id)}
                 >
                   {column.label}
 
@@ -166,20 +114,7 @@ export const TableComponent = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </div>
-      <div
-        style={{
-          paddingTop: "15px",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: "10px",
-        }}
-      >
-        <LineChartComponent data={tableData} />
-        <PieChartComponent data={tableData} />
-      </div>
-    </Paper>
+    </>
   );
 };
 

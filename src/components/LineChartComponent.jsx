@@ -1,41 +1,9 @@
 /* eslint-disable react/prop-types */
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import { prepareLineChartData } from "../utils/prepareLineChartData";
 
 export const LineChartComponent = ({ data }) => {
-  function prepareData(inputData) {
-    const preparedData = {};
-
-    inputData.forEach(item => {
-      const { date, category, sold } = item;
-      const day = new Date(date).getDate();
-
-      if (!preparedData[day]) {
-        preparedData[day] = {};
-      }
-
-      if (!preparedData[day][category]) {
-        preparedData[day][category] = 0;
-      }
-
-      preparedData[day][category] += sold;
-    });
-
-    const resultArray = Object.entries(preparedData).map(
-      ([day, categories]) => {
-        const resultObject = { day: parseInt(day) };
-        Object.entries(categories).forEach(([category, totalSold]) => {
-          resultObject[category] = totalSold;
-        });
-
-        return resultObject;
-      }
-    );
-
-    return resultArray;
-  }
-
-  const preparedData = prepareData(data);
-  console.log(preparedData);
+  const preparedData = prepareLineChartData(data);
 
   return (
     <LineChart width={600} height={300} data={preparedData}>
