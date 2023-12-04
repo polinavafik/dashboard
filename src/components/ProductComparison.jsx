@@ -3,8 +3,11 @@ import { useState } from "react";
 import { Button, Select, MenuItem } from "@mui/material";
 
 import { CompareLineChartComponent } from "./CompareLineChart";
+import { useSelector } from "react-redux";
+import { selectProductsToCompare } from "../app/TableDataSlice";
 
 const ProductComparison = ({ tableData, onCompare }) => {
+  const productsToCompare = useSelector(selectProductsToCompare);
   const [selectedProduct1, setSelectedProduct1] = useState("");
   const [selectedProduct2, setSelectedProduct2] = useState("");
 
@@ -44,9 +47,11 @@ const ProductComparison = ({ tableData, onCompare }) => {
         <Button onClick={handleCompare}>Compare</Button>
       </div>
 
-      <div>
-        <CompareLineChartComponent data={tableData} />
-      </div>
+      {!!productsToCompare.length && (
+        <div>
+          <CompareLineChartComponent data={tableData} />
+        </div>
+      )}
     </>
   );
 };
