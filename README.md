@@ -1,31 +1,29 @@
 # Dashboard
 
-[DEMO](https://dashboard-phi-roan.vercel.app/)
+[Dashboard DEMO](https://dashboard-phi-roan.vercel.app/)
+This application is designed to provide a comprehensive overview of sales data for at least three product categories over a period of one month. It incorporates interactive tables, dynamic charts, and a comparison feature to help users analyze and visualize sales metrics efficiently. The project is built using React and Redux, emphasizing the use of functional components and hooks for optimal performance
 
 1. Table:
-
-- yes Populate the table with mock sales data for at least three product categories
-  over a period of 1 month.
-- yes Implement sorting options for revenue, units sold, and profit margins.
-- yes Enable dynamic filtering by day or product category.
-- yes Add possibility to download data in .csv format
+- Users can easily sort the table based on revenue, units sold, and profit margins, providing flexibility in data analysis
+- Dynamic filtering options are available, allowing users to filter data by day or product category to focus on specific subsets of information
+-The application supports the download of data in .csv format
 
 2. Chart:
-
-- yes Generate a line chart illustrating the sales trend for the month period.
-- yes Create a pie or bar chart depicting the distribution of sales among the three product categories.
+- Users can view the distribution of sales among the three product categories with a line and pie charts (currently it compares units sold)
 
 3. Comparison Feature:
+- An interactive dropdown menu is implemented to select and compare sales data between two specific products
 
-- yes Develop a dropdown menu or interactive element to select and compare sales data between two specific products.
-- yes? Display the comparative metrics in chart sections for easy analysis.
+### Technical Details:
 
-### Technical requirements:
+Framework: React and Redux Toolkit, MUI components, recharts
+Coding Style: JavaScript, emphasizing functional components and hooks
+User Interface: The application boasts a beautiful and clean design to enhance the user experience.
+Deployment: Vercel
 
-• Using React and Redux.
-• Use of functional components and hooks.
-• The code must be written in JavaScript.
-• Beautiful and clean user interface is welcome.
-• Using additional libraries and tools to improve the UX and interaction with the
-application will be a big advantage.
-• Deploy your work(Github Pages, Netlify, Vercel, ets. up to you)
+### Get Started
+To run the application locally, follow these steps:
+
+Clone the repository: git clone [repository URL]
+Install dependencies: npm install
+Run the application: npm run dev
