@@ -1,6 +1,7 @@
 # Dashboard
 
 [Dashboard DEMO](https://dashboard-phi-roan.vercel.app/)
+
 This application is designed to provide a comprehensive overview of sales data for at least three product categories over a period of one month. It incorporates interactive tables, dynamic charts, and a comparison feature to help users analyze and visualize sales metrics efficiently. The project is built using React and Redux, emphasizing the use of functional components and hooks for optimal performance
 
 1. Table:
