@@ -17,10 +17,10 @@ This application is designed to provide a comprehensive overview of sales data f
 
 ### Technical Details:
 
-Framework: React and Redux Toolkit, MUI components, recharts
-Coding Style: JavaScript, emphasizing functional components and hooks
-User Interface: The application boasts a beautiful and clean design to enhance the user experience.
-Deployment: Vercel
+- Framework: React and Redux Toolkit, MUI components, recharts
+- Coding Style: JavaScript, emphasizing functional components and hooks
+- User Interface: The application boasts a beautiful and clean design to enhance the user experience.
+- Deployment: Vercel
 
 ### Get Started
 To run the application locally, follow these steps:
